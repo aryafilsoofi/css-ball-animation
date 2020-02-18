@@ -5,130 +5,183 @@
     scroll-behavior: smooth;
 }
 
-
 body {
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-
 .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #111;
     width: 100%;
     height: 100vh;
 }
 
-
 div div {
+    position: relative;
+    background: #f7aa35;
     height: 50vh;
     width: 50vh;
-    clip-path: circle(40%);
-    animation: Beating .6s linear infinite;
+    margin: 0 auto;
+    clip-path: ellipse(40% 40%);
+    animation: Bounce .8s infinite;
     animation-play-state: paused;
+    z-index: 1;
 }
 
-
-
-
-/* Hover
-
-Jelly Bean-looking thing that might pass for a beating heart lol
-
-*/
-
+.shadow {
+    position: relative;
+    background: #333;
+    height: 50vh;
+    width: 50vh;
+    top: 20vh;
+    margin: 0 auto;
+    clip-path: ellipse(10% 1%);
+    animation: Bounce-Shadow .8s forwards infinite;
+    animation-play-state: paused;
+    z-index: 0;
+}
 
 .clicked {
     animation-play-state: running;
 }
 
-@keyframes Beating {
+.clicked-shadow {
+    animation-play-state: running;
+}
+
+@keyframes Bounce-Shadow {
     0% {
-        transform: skew(2deg, 10deg);
-        background: #f0326e;
-        height: 50vh;
-        width: 50vh;
+        display: block;
+
+        transform: translate(0%, 0%);
     }
 
-    50% {
-        clip-path: circle(35%);
 
-        transform: skew(10deg, 2deg);
-        background: #f7aa35;
-        height: 48vh;
-        width: 48vh;
+    6% {
+        transform: translate(10%, 0%);
     }
 
-    75% {
-        clip-path: circle(45%);
+    12% {
+        transform: translate(15%, 0%);
 
-        transform: skew(-2deg, 10deg);
 
-        background: #802c6e;
-        height: 52vh;
-        width: 52vh;
+    }
+
+    24% {
+        transform: translate(35%, 0%);
+
+    }
+
+    36% {
+        transform: translate(40%, 0%);
+
+
+    }
+
+    45% {
+
+        transform: translate(40%, 0%);
+
+    }
+
+    54% {
+        transform: translate(0%, 0%);
+        clip-path: ellipse(40% 5%);
+
+    }
+
+
+    64% {
+        transform: translate(-30%, 0%);
+
+
+    }
+
+    74% {
+        transform: translate(-30%, 0%);
+
+    }
+
+    82% {
+        transform: translate(-20%, 0%);
+
+    }
+
+    92% {
+        transform: translate(-10%, 0%);
     }
 
     100% {
-        transform: skew(2deg, 10deg);
-
-        background: #f0326e;
-        height: 50vh;
-        width: 50vh;
+        transform: translate(0%, 0%);
     }
-
 }
 
-/* Click
-
-Tiggers button's animation before sending the user back to the top of the page
-
-*/
-
-a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* text-decoration: none; */
-    border-radius: 20px;
-}
-
-/* 
-.clicked {
-    animation: BOO .5s infinite ease-in-out;
-
-} */
-
-@keyframes BOO {
+@keyframes Bounce {
     0% {
-        transform: skew(2deg, 10deg);
+
+        transform: translate(0%, 0%);
+    }
+
+
+    6% {
+        transform: translate(10%, 5%);
+    }
+
+    12% {
+        transform: translate(15%, 10.89%);
+
+
+    }
+
+    24% {
+        transform: translate(35%, 43.56%);
+        clip-path: ellipse(40% 45%);
+
+    }
+
+    36% {
+        transform: translate(40%, 75.02%);
+
+
+    }
+
+    45% {
+        transform: translate(40%, 98%);
+
+    }
+
+    54% {
+        transform: translate(0%, 100%);
+        clip-path: ellipse(50% 40%);
         background: #f0326e;
-        height: 50vh;
-        width: 50vh;
+
     }
 
-    50% {
-        transform: skew(10deg, 2deg);
-        background: #f7aa35;
-        height: 48vh;
-        width: 48vh;
+
+    64% {
+        transform: translate(-30%, 98%);
+
+
     }
 
-    75% {
-        padding: 10vh;
-        transform: skew(-2deg, 10deg);
-        background: #802c6e;
-        height: 52vh;
-        width: 52vh;
+    74% {
+        transform: translate(-30%, 75.02%);
+
+    }
+
+    82% {
+        transform: translate(-20%, 43.56%);
+        clip-path: ellipse(40% 50%);
+
+    }
+
+    92% {
+        transform: translate(-10%, 10.89%);
     }
 
     100% {
-        transform: skew(2deg, 10deg);
-
-        background: #f0326e;
-        height: 50vh;
-        width: 50vh;
+        transform: translate(0%, 0%);
+        clip-path: ellipse(40% 40%);
     }
+
 }
