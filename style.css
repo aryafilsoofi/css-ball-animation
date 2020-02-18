@@ -119,7 +119,7 @@ div div {
 @keyframes Bounce {
     0% {
 
-        transform: translate(0%, 0%);
+        transform: translate(0%, 0%) rotate(0deg);
     }
 
 
@@ -134,7 +134,7 @@ div div {
     }
 
     24% {
-        transform: translate(35%, 43.56%);
+        transform: translate(35%, 43.56%) rotate(-10deg);
         clip-path: ellipse(40% 45%);
 
     }
@@ -151,7 +151,7 @@ div div {
     }
 
     54% {
-        transform: translate(0%, 100%);
+        transform: translate(0%, 100%) rotate(0deg);
         clip-path: ellipse(50% 40%);
         background: #f0326e;
 
@@ -170,7 +170,7 @@ div div {
     }
 
     82% {
-        transform: translate(-20%, 43.56%);
+        transform: translate(-20%, 43.56%) rotate(50deg);
         clip-path: ellipse(40% 50%);
 
     }
@@ -180,8 +180,9 @@ div div {
     }
 
     100% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 0%) rotate(0deg);
         clip-path: ellipse(40% 40%);
+
     }
 
 }
